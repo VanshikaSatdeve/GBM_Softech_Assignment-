@@ -268,13 +268,16 @@ function TaskForm() {
                         <TableCell align="center">{data.deu_date}</TableCell>
                         <TableCell align="center">{data.status}</TableCell>
                         <TableCell align="center">
-                          <Box
+                          {/* <Box
                             sx={{
                               display: "flex",
                               justifyContent: "space-between",
                             }}
-                          >
+                          > */}
                             <Button
+                            sx={{
+                              marginRight:"5px"
+                            }}
                               variant="contained"
                               color="primary"
                               startIcon={<DeleteIcon />}
@@ -294,7 +297,7 @@ function TaskForm() {
                             >
                               Edit
                             </Button>
-                          </Box>
+                          {/* </Box> */}
                         </TableCell>
                       </TableRow>
                     ))}

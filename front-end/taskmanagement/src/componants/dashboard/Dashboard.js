@@ -117,20 +117,7 @@ const Dashboard = () => {
   const navigatePage = (path) => {
     navigate(path)
   }
-
-  const isAccessToken = !!sessionStorage.getItem("accessToken");
-
-  const handleLogout = () => {
-    if (isAccessToken) {
-      setAlertSeverity('warning'); // or 'info', 'error', etc. based on your needs
-      setAlertMessage(`Are you sure you want to logout ?`);
-      setShowAlert(true);
-
-    }
-  };
-
-  const userName = sessionStorage.getItem("user");
-
+  
 
 
   return (
@@ -154,15 +141,15 @@ const Dashboard = () => {
               GBM Softech <span style={{ marginLeft: '15px', marginRight: '15px' }}>|</span>  {capitalizeFirstLetter(role)} Task Management System
             </Typography>
             <Box sx={{ flexGrow: 1 }} />
-            {userName ? (
+           
               <Typography variant="h6" noWrap sx={{ fontSize: '18px' }} component="div">
-                Welcome  {userName}
+                Welcome,   
               </Typography>
-            ) : (
+          
               <Typography variant="h6" sx={{ fontSize: '18px' }} noWrap component="div">
-                Dashboard
+                Admin
               </Typography>
-            )}
+           
             <Typography sx={{ marginLeft: '15px' }} variant="h6" noWrap component="div">
               |
             </Typography>
@@ -272,35 +259,7 @@ const Dashboard = () => {
 
 
             
-            {/* {isRole && (
-              <ListItem
-                disablePadding
-                sx={{ display: 'block' }}
-                className={location.pathname === '/dashboard/payment-details' ? 'selected' : ''}
-              >
-                <ListItemButton onClick={() => navigatePage("/dashboard/payment-details")}
-                  sx={{
-                    minHeight: 48,
-                    justifyContent: open ? 'initial' : 'center',
-                    px: 2.5,
-                  }}
-                >
-                  <Tooltip title="Employee Salary" arrow>
-                  <ListItemIcon
-                    sx={{
-                      minWidth: 0,
-                      mr: open ? 3 : 'auto',
-                      justifyContent: 'center',
-                    }}
-                  >
-
-                    <FaRupeeSign />
-                  </ListItemIcon>
-                  </Tooltip>
-                  <ListItemText primary='Employee Salary' sx={{ opacity: open ? 1 : 0 }} />
-                </ListItemButton>
-              </ListItem>
-            )} */}
+        
           </List>
           <Divider />
 
